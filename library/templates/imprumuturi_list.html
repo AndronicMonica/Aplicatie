@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+    {% block title %}
+        Imprumuturile sau rezervarile existente la momentul actual
+    {% endblock %}
+
+    {% block content %}
+        <table border="1" width="70%">
+            <tr style="font-weight:bold", align="center"><td>Nume si prenume</td><td></td>Carte</td<td>Data inceput</td><td>Data sfarsit</td><td>Cont solicitant</td></tr>
+            {% for book in object_list %}
+            <tr><td>{{ imprumuturi.nume_prenume}}</td><td>{{ imprumuturi.titlu_carte }}</td><td>{{ imprumuturi.data_inceput }}</td><td>{{ imprumuturi.data_sfarsit }}</td><td>{{ imprumuturi.owner }}</td></tr>
+            {% empty %}
+              <tr><p>Nu exista niciun imprumut sau rezervare momentan.<p></tr>
+            {% endfor %}
+
+        </table>
+    {% endblock %}

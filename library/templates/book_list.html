@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+    {% block title %}
+        Cartile de care dispune biblioteca sunt urmatoarele
+    {% endblock %}
+
+    {% block content %}
+        <table border="1" width="70%">
+            <tr style="font-weight:bold", align="center"><td>Titlu</td><td>Autor</td><td>Editura</td><td>Disponibilitate</td></tr>
+            {% for book in object_list %}
+            <tr><td>{{ book.titlu }}</td><td>{{ book.autor }}</td><td>{{ book.editura }}</td><td>{{ book.disponibilitate }}</td></tr>
+            {% empty %}
+              <tr><p>Nu exista nicio carte.<p></tr>
+            {% endfor %}
+
+        </table>
+    {% endblock %}
